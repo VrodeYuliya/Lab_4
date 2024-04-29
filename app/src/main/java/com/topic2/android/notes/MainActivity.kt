@@ -17,7 +17,6 @@ import kotlinx.coroutines.launch
 import ui.components.AppDrawer
 import ui.components.Note
 
-
 /**
  * Main activity приложения.
  */
@@ -59,3 +58,5 @@ class MainActivity : AppCompatActivity() {
     }
   }
 }
+
+

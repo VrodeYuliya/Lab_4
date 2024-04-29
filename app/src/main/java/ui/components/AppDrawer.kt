@@ -44,7 +44,7 @@ private fun AppDrawerHeader(){
             modifier = Modifier.padding(16.dp)
         )
         Text(
-            stringResource(id = R.string.app_name),
+           stringResource(id = R.string.app_name),
             modifier = Modifier
                 .align(alignment = Alignment.CenterVertically)
         )
@@ -128,7 +128,7 @@ fun ScreenNavigationButtonPreview(){
             label = stringResource(R.string.app_name),
             isSelected = true,
             onClick = { }
-        )
+            )
     }
 }
 
@@ -157,44 +157,44 @@ private fun LightDarkThemeItem() {
         )
     }
 }
-@Preview
-@Composable
-fun LightDarkThemeItemPreview() {
-    NotesTheme {
-        LightDarkThemeItem()
+    @Preview
+    @Composable
+    fun LightDarkThemeItemPreview() {
+        NotesTheme {
+            LightDarkThemeItem()
+        }
     }
-}
 
 @Composable
 fun AppDrawer (
     currentScreen: Screen,
     closeDrawerAction: () -> Unit
 ){
-    Column (modifier = Modifier.fillMaxSize()) {
-        AppDrawerHeader()
+Column (modifier = Modifier.fillMaxSize()) {
+    AppDrawerHeader()
 
-        Divider(color = MaterialTheme.colors.onSurface.copy(alpha = .2f))
+    Divider(color = MaterialTheme.colors.onSurface.copy(alpha = .2f))
 
-        ScreenNavigationButton (
-            icon = Icons. Filled. Home,
-            label = stringResource(id = R.string.app_name),
-            isSelected = currentScreen == Screen.Notes,
-            onClick = {
-                NotesRouter.navigateTo(Screen.Notes)
-                closeDrawerAction()
-            }
-        )
-        ScreenNavigationButton(
-            icon = Icons.Filled.Delete,
-            label = stringResource(id = R.string.app_cart),
-            isSelected = currentScreen == Screen.Trash,
-            onClick = {
-                NotesRouter.navigateTo(Screen.Trash)
-                closeDrawerAction()
-            }
-        )
-        LightDarkThemeItem()
-    }
+    ScreenNavigationButton (
+        icon = Icons. Filled. Home,
+        label = stringResource(id = R.string.app_name),
+        isSelected = currentScreen == Screen.Notes,
+        onClick = {
+            NotesRouter.navigateTo(Screen.Notes)
+            closeDrawerAction()
+        }
+    )
+                ScreenNavigationButton(
+                    icon = Icons.Filled.Delete,
+                    label = stringResource(id = R.string.app_cart),
+                    isSelected = currentScreen == Screen.Trash,
+                    onClick = {
+                        NotesRouter.navigateTo(Screen.Trash)
+                        closeDrawerAction()
+                    }
+                )
+            LightDarkThemeItem()
+        }
 }
 
 @Preview
